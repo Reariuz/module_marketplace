@@ -5,7 +5,7 @@ function createWindow () {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        frame:true,
+        frame:false, //make true in case window needs debugging
         backgroundColor: '#ffffff',
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
