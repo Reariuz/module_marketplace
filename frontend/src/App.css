@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #181818;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: #1e1e1e;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header h1 {
+  font-size: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header nav ul li {
+  cursor: pointer;
+  color: #00a0e0;
+  transition: color 0.3s;
+}
+
+.header nav ul li:hover {
+  color: #ffffff;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-right: 1px solid #444;
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #00a0e0;
+  transition: color 0.3s;
+}
+
+.sidebar ul li:hover {
+  color: #ffffff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.main-content h2 {
+  margin-bottom: 20px;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.game-item {
+  background-color: #333;
+  padding: 15px;
+  flex: 1 0 150px; /* Flex-Basis für responsives Layout */
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.game-item:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  background-color: #1e1e1e;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  -webkit-app-region: drag;
+}
+
+title {
+  font-size: 16px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #00a0e0;
+  font-size: 20px;
+  cursor: pointer;
+  margin-Left: 10px;
+  -webkit-app-region: no-drag;
 }
