@@ -1,0 +1,28 @@
+name: build docker image and deploy
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to GitHub Container Registry
+        env:
+          CR_PAT: ${{ secrets.CR_PAT }} # Verwende das persönliche Zugriffstoken
+        run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Build the Docker image
+        run: |
+          # Stelle sicher, dass der Repository-Name klein geschrieben wird
+          IMAGE_NAME=first_release_of_marketplace # Setze hier deinen gewünschten Image-Namen (in Kleinbuchstaben)
+          docker build -t ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ github.sha }} .
+          docker tag ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ github.sha }} ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
+
+      - name: Push the image to GitHub Container Registry
+        run: |
+          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ github.sha }}
+          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
