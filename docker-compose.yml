@@ -2,6 +2,7 @@ services:
   frontend:
     build:
       context: ./frontend
+    image: module_marketplace/frontend:latest
     ports:
       - "3000:3000"
     volumes:
@@ -12,6 +13,7 @@ services:
   backend:
     build:
       context: ./backend
+    image: module_marketplace/backend:latest
     ports:
       - "5000:5000"
     volumes:
@@ -20,6 +22,7 @@ services:
   electron:
     build: 
       context: ./electron-app
+    image: module_marketplace/electron:latest
     depends_on:
       - frontend
     ports:
