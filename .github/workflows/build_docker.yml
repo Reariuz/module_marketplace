@@ -31,17 +31,14 @@ jobs:
         run: |
           # Tagging und Push für das Backend-Image
           docker tag module_marketplace/backend:latest ghcr.io/reariuz/module_marketplace/backend:latest
-          docker push ghcr.io/reariuz/module_marketplace/backend:${{ github.sha }}
           docker push ghcr.io/reariuz/module_marketplace/backend:latest
       
           # Tagging und Push für das Frontend-Image
           docker tag module_marketplace/frontend:latest ghcr.io/reariuz/module_marketplace/frontend:latest
-          docker push ghcr.io/reariuz/module_marketplace/frontend:${{ github.sha }}
           docker push ghcr.io/reariuz/module_marketplace/frontend:latest
       
           # Tagging und Push für das Electron-Image
           docker tag module_marketplace/electron:latest ghcr.io/reariuz/module_marketplace/electron:latest
-          docker push ghcr.io/reariuz/module_marketplace/electron:${{ github.sha }}
           docker push ghcr.io/reariuz/module_marketplace/electron:latest
 
       #- name: Push the image to GitHub Container Registry
