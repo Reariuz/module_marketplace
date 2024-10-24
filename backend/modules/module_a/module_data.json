@@ -1,0 +1,9 @@
+{
+    "module_name":"Asterix",
+    "module_Type":"konnektor",
+    "module_description":"connects Radar with Asterix data standart",
+    "connectors":{
+        "input":["ASTERIX"],
+        "output":["RAW"]
+    }
+}

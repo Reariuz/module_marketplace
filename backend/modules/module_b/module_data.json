@@ -1,0 +1,9 @@
+{
+    "module_name":"track_fusion",
+    "module_Type":"fragment",
+    "module_description":"combines trackdata to a single track",
+    "connectors":{
+        "input":["RAW","AIS"],
+        "output":["CONTACT"]
+    }
+}
