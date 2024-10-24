@@ -19,10 +19,10 @@ jobs:
         run: |
           # Stelle sicher, dass der Repository-Name klein geschrieben wird
           IMAGE_NAME=first_release_of_marketplace # Setze hier deinen gewünschten Image-Namen (in Kleinbuchstaben)
-          docker build -t ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ github.sha }} .
-          docker tag ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ github.sha }} ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
+          docker build -t ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }} .
+          docker tag ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }} ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
 
       - name: Push the image to GitHub Container Registry
         run: |
-          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ github.sha }}
-          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
+          docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }}
+          docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
