@@ -5,6 +5,17 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Welcome to the API',
+        endpoints: [
+            { method: 'GET', path: '/api', description: 'Returns the API status' },
+            { method: 'GET', path: '/debug', description: 'Returns available endpoints' }
+        ]
+    });
+});
+
+
 // Einfacher Api-Endpoint
 app.get('/api', (req, res) => {
     res.json({ message: 'Backend ist live!' });
@@ -12,11 +23,14 @@ app.get('/api', (req, res) => {
 
 // Einfacher Api-Endpoint
 app.get('/debug', (req, res) => {
-    res.json(
-        {   message: 'The following endpoints are available:',
-            1: '/api',
-            2:'api/json-files' 
-        });
+    res.json({
+        message: 'The following endpoints are available:',
+        routes: [
+            '/api',
+            '/debug'
+            // Add other routes here as necessary
+        ]
+    });
 });
 
 
@@ -51,6 +65,16 @@ app.get('/api/json-files', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server läuft auf Port ${port}`);
-});
+// Function to start the server
+const startServer = () => {
+    return app.listen(port, () => {
+        console.log(`Server läuft auf Port ${port}`);
+    });
+};
+
+module.exports = { app, startServer };
+
+// Optionally, add this if you want to allow running directly
+if (require.main === module) {
+    startServer();
+}
