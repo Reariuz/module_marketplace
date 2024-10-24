@@ -1,0 +1,32 @@
+name: build docker image and deploy
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to GitHub Container Registry
+        env:
+          CR_PAT: ${{ secrets.CR_PAT }} # Verwende das persönliche Zugriffstoken
+        run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Build the Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/your-image-name:${{ github.sha }} .
+          docker tag ghcr.io/${{ github.repository }}/your-image-name:${{ github.sha }} ghcr.io/${{ github.repository }}/your-image-name:latest
+
+      - name: Push the image to GitHub Container Registry
+        run: |
+          docker push ghcr.io/${{ github.repository }}/your-image-name:${{ github.sha }}
+          docker push ghcr.io/${{ github.repository }}/your-image-name:latest
+
+      - name: Create a Release on GitHub (optional)
+        if: github.event_name == 'release'
+        run: |
+          echo "Creating a release for version ${{ github.event.release.tag_name }}"
+          docker-compose up --build 
