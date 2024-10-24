@@ -25,7 +25,7 @@ jobs:
           docker-compose build # Baut die Images basierend auf der docker-compose.yml
           docker-compose push # Pusht die Images zur GitHub Container Registry
 
-      #- name: Push the image to GitHub Container Registry
-      #  run: |
-      #    docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }}
-      #    docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
+      - name: Push the image to GitHub Container Registry
+        run: |
+          docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }}
+          docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
