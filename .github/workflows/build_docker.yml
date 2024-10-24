@@ -17,13 +17,13 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/your-image-name:${{ github.sha }} .
-          docker tag ghcr.io/${{ github.repository }}/your-image-name:${{ github.sha }} ghcr.io/${{ github.repository }}/your-image-name:latest
+          docker build -t ghcr.io/${{ github.repository }}/module_marketplace:${{ github.sha }} .
+          docker tag ghcr.io/${{ github.repository }}/module_marketplace:${{ github.sha }} ghcr.io/${{ github.repository }}/module_marketplace:latest
 
       - name: Push the image to GitHub Container Registry
         run: |
-          docker push ghcr.io/${{ github.repository }}/your-image-name:${{ github.sha }}
-          docker push ghcr.io/${{ github.repository }}/your-image-name:latest
+          docker push ghcr.io/${{ github.repository }}/module_marketplace:${{ github.sha }}
+          docker push ghcr.io/${{ github.repository }}/module_marketplace:latest
 
       - name: Create a Release on GitHub (optional)
         if: github.event_name == 'release'
