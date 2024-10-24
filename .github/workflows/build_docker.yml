@@ -15,14 +15,12 @@ jobs:
           CR_PAT: ${{ secrets.CR_PAT }} # Verwende das persönliche Zugriffstoken
         run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
-      - name: Build the Docker image
+      - name: Build and Push Docker images using docker-compose
         run: |
-          # Stelle sicher, dass der Repository-Name klein geschrieben wird
-          IMAGE_NAME=first_release_of_marketplace # Setze hier deinen gewünschten Image-Namen (in Kleinbuchstaben)
-          docker build -t ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }} .
-          docker tag ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }} ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
+          docker-compose build # Baut die Images basierend auf der docker-compose.yml
+          docker-compose push # Pusht die Images zur GitHub Container Registry
 
-      - name: Push the image to GitHub Container Registry
-        run: |
-          docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }}
-          docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
+      #- name: Push the image to GitHub Container Registry
+      #  run: |
+      #    docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }}
+      #    docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
