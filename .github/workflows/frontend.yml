@@ -1,0 +1,38 @@
+name: Build and Test Frontend
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'frontend/**'  # Auslösen bei Änderungen im frontend-Ordner
+  pull_request:
+    branches: ["main"]
+    paths:
+      - 'frontend/**'  # Auslösen bei Änderungen im frontend-Ordner
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # oder eine andere Version, die du benötigst
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Run tests
+        working-directory: frontend
+        run: npm test -- --watchAll=false  # Führe Tests aus (deaktiviere den Watch-Modus)
+
+      - name: Build the app
+        working-directory: frontend
+        run: npm run build  # Baue die React-App
