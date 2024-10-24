@@ -7,7 +7,7 @@ import TitleBar from './components/TitleBar';
 import './App.css'; // Optional für Styling
 
 const App = () => {
-    console.log('app redered')
+    console.log('app rendered')
     return (
         <div className="app">
             <TitleBar />
