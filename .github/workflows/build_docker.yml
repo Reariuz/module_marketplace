@@ -23,7 +23,8 @@ jobs:
       - name: Build and Push Docker images using docker-compose
         run: |
           docker-compose build # Baut die Images basierend auf der docker-compose.yml
-          docker-compose push # Pusht die Images zur GitHub Container Registry
+          docker tag module_marketplace_backend:latest ghcr.io/reariuz/module_marketplace/backend:latest
+          docker push ghcr.io/reariuz/module_marketplace/backend:latest
 
       #- name: Push the image to GitHub Container Registry
       #  run: |
