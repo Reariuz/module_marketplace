@@ -14,7 +14,12 @@ jobs:
         env:
           CR_PAT: ${{ secrets.CR_PAT }} # Verwende das persönliche Zugriffstoken
         run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
-
+        
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+          
       - name: Build and Push Docker images using docker-compose
         run: |
           docker-compose build # Baut die Images basierend auf der docker-compose.yml
