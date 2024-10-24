@@ -1,0 +1,47 @@
+name: build docker image and deploy
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to GitHub Container Registry
+        env:
+          CR_PAT: ${{ secrets.CR_PAT }} # Verwende das persönliche Zugriffstoken
+        run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+        
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+          
+      - name: Build and Push Docker images using docker-compose
+        run: |
+          docker-compose build # Baut die Images basierend auf der docker-compose.yml
+
+      - name: list images created
+        run: docker images    
+
+      - name: Push the images to Github Container Registry
+        run: |
+          # Tagging und Push für das Backend-Image
+          docker tag module_marketplace/backend:latest ghcr.io/reariuz/module_marketplace/backend:latest
+          docker push ghcr.io/reariuz/module_marketplace/backend:latest
+      
+          # Tagging und Push für das Frontend-Image
+          docker tag module_marketplace/frontend:latest ghcr.io/reariuz/module_marketplace/frontend:latest
+          docker push ghcr.io/reariuz/module_marketplace/frontend:latest
+      
+          # Tagging und Push für das Electron-Image
+          docker tag module_marketplace/electron:latest ghcr.io/reariuz/module_marketplace/electron:latest
+          docker push ghcr.io/reariuz/module_marketplace/electron:latest
+
+      #- name: Push the image to GitHub Container Registry
+      #  run: |
+      #    docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:${{ github.sha }}
+      #    docker push ghcr.io/reariuz/module_marketplace/$IMAGE_NAME:latest
