@@ -2,7 +2,7 @@ const request = require('supertest');
 const { app, startServer } = require('./server'); // Ensure this is correct
 let server;
 
-//describe('API Server Tests', () => {
+describe('API Server Tests', () => {
     beforeAll(async () => {
         console.log('server start');
         server = startServer();
@@ -53,4 +53,4 @@ let server;
         console.log('Closing server...');
         await new Promise(resolve => server.close(resolve));
     });
-//});
+});

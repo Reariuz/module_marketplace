@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -13,11 +14,16 @@
     "express": "^4.21.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.13.0",
     "axios": "^1.7.7",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
     "jest": "^29.7.0",
+    "lint": "^0.8.19",
     "supertest": "^7.0.0"
   },
-  "jest":{
-    "silent" : false
+  "jest": {
+    "silent": false
   }
 }
