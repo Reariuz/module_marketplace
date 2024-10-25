@@ -47,6 +47,8 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "globals": "^15.11.0"
+    "globals": "^15.11.0",
+    "i18next": "^23.16.4",
+    "react-i18next": "^15.1.0"
   }
 }
