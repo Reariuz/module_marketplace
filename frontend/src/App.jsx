@@ -9,10 +9,10 @@ import './App.css'; // Optional für Styling
 const App = () => {
     console.log('app rendered')
     return (
-        <div className="app">
+        <div className='app'>
             <TitleBar />
             <Header />
-            <div className="content">
+            <div className='content'>
                 <Sidebar />
                 <MainContent />
             </div>

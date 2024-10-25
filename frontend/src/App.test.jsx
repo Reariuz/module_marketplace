@@ -2,11 +2,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import TitleBar from './components/TitleBar'; // Update the import path as necessary
-import Header from './components/Header'; // Update the import path as necessary
-import Sidebar from './components/Sidebar'; // Update the import path as necessary
-import MainContent from './components/MainContent'; // Update the import path as necessary
-import Footer from './components/Footer'; // Update the import path as necessary
+
 
 jest.mock('./components/TitleBar', () => () => <div>TitleBar</div>);
 jest.mock('./components/Header', () => () => <div>Header</div>);
