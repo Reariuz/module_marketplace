@@ -16,7 +16,7 @@
 
 # General Stuff
 ## 1. detailed documentation
-   - API docu with [swagger]() or [postman]()
+   - API docu with ![swagger]()!
    - generic documentation with [Docusaurus]() or [GitHub Pages]()
    - Developerguide in Docs
 
