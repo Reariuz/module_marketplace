@@ -21,7 +21,7 @@ export default [...compat.extends("eslint:recommended"), {
     ignores: ['server.test.js','**/*.test.js','**/*.test.jsx'],
 
     rules: {
-        "no-console": "off",
-    },
+        "no-console": "off"
+    }
     
 }];
