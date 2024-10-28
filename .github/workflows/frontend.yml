@@ -4,11 +4,11 @@ on:
   push:
     branches: ["main"]
     paths:
-      - 'frontend/**'  # Auslösen bei Änderungen im frontend-Ordner
+      - 'frontend/**'
   pull_request:
     branches: ["main"]
     paths:
-      - 'frontend/**'  # Auslösen bei Änderungen im frontend-Ordner
+      - 'frontend/**'
 
 
 
@@ -23,7 +23,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # oder eine andere Version, die du benötigst
+          node-version: '16'  
 
       - name: Install dependencies
         working-directory: frontend
@@ -31,8 +31,12 @@ jobs:
 
       - name: Run tests
         working-directory: frontend
-        run: npm test -- --watchAll=false  # Führe Tests aus (deaktiviere den Watch-Modus)
+        run: npm test -- --watchAll=false
+
+      - name: Run lint
+        working-directory: frontend
+        run: npm run lint  
 
       - name: Build the app
         working-directory: frontend
-        run: npm run build  # Baue die React-App
+        run: npm run build 
