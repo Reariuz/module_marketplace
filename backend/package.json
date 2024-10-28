@@ -10,18 +10,18 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "express": "^4.21.1"
-  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.13.0",
     "axios": "^1.7.7",
     "eslint": "^9.13.0",
+    "express": "^4.21.1",
     "globals": "^15.11.0",
     "jest": "^29.7.0",
     "lint": "^0.8.19",
-    "supertest": "^7.0.0"
+    "supertest": "^7.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "jest": {
     "silent": false

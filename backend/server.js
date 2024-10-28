@@ -1,9 +1,37 @@
 const express = require('express');
+const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDoc = require('./src/utils/swagger.js');
+const userRoutes = require('./src/routes/userRoutes.js')
+
 const app = express();
 const port = process.env.PORT || 5000;
+
+console.log(swaggerDoc);
+
+app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+app.use('/api/v1/users', userRoutes)
+
+app.get('api/v1/users', (req, res) => {
+  //logic?
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.get('/', (req, res) => {
     res.json({
@@ -16,7 +44,22 @@ app.get('/', (req, res) => {
 });
 
 
+
+
+
+
 // Einfacher Api-Endpoint
+
+/**
+ * @swagger
+ * /api:
+ * get:
+ *  summary: Retrieve connection details
+ *      responses:
+ *          200:
+ *              description: a status message
+ * 
+ */
 app.get('/api', (req, res) => {
     res.json({ message: 'Backend ist live!' });
 });
