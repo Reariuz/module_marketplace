@@ -4,4 +4,4 @@ exports.getAllUsers = (req, res) => {
 
 exports.createUser = (req, res) => {
     //logic for creating new user
-}
+};

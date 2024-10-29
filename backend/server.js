@@ -4,16 +4,19 @@ const fs = require('fs');
 const path = require('path');
 
 const swaggerUi = require('swagger-ui-express');
-const swaggerDoc = require('./src/utils/swagger.js');
+const swaggerDoc = require('./src/middleware/swagger');
+//Routes
 const userRoutes = require('./src/routes/userRoutes.js')
+const moduleConfigRoutes = require('./src/routes/moduleConfigRoutes.js')
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-console.log(swaggerDoc);
+app.use(express.json());
 
 app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/moduleConfig',moduleConfigRoutes)
 
 app.get('api/v1/users', (req, res) => {
   //logic?
