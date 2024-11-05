@@ -1,0 +1,11 @@
+{
+    "Module_id": "12345"
+    "module_name":"Asterix",
+    "Module_version":"1.1.1",
+    "module_Type":"konnektor",
+    "module_description":"connects Radar with Asterix data standart",
+    "connectors":{
+        "input":["ASTERIX"],
+        "output":["RAW"]
+    }
+}
