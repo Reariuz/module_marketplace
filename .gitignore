@@ -120,8 +120,9 @@ dist
 # FuseBox cache
 .fusebox/
 
-# DynamoDB Local files
-.dynamodb/
+# MongoDB Local files
+backend/data/diagnostic.data/
+backend/data/journal/
 
 # TernJS port file
 .tern-port
