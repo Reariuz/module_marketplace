@@ -2,6 +2,11 @@
   "user": {
     "username": "john_doe",
     "email": "john@example.com",
+    "passwordHash": "1345",
+    "roles":["user","admin","whatever"],
+    "Unit":{
+	"placeholder_for_later":"none",
+    }
     "configuration": [
       {
         "module_id": "abc123",
