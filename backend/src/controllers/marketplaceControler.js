@@ -1,9 +1,10 @@
 const Module = require('../models/marketplaceModuleModel');
+const Module_short = require('../models/marketplaceModuleShortModel');
 
 exports.getAllModules = async (req, res) => {
     try {
         // Abrufen aller Benutzer aus der Datenbank
-        const modules = await Module.find(); // Findet alle Benutzer
+        const modules = await Module_short.find(); // Findet alle Benutzer
 
         // Sende die Liste der Benutzer zurück
         res.status(200).json(modules);
