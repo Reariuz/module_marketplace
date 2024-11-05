@@ -1,0 +1,16 @@
+{
+  "module_list": [
+    {   
+      "Module_id": "12345"
+      "module_name":"Asterix",
+      "Module_version":"1.1.1",
+      "module_Type":"konnektor",
+    },
+    {   
+      "Module_id": "12346"
+      "module_name":"Asterix",
+      "Module_version":"1.1.7",
+      "module_Type":"konnektor",
+    }
+  ]
+}
