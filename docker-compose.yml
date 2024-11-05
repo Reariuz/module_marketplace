@@ -16,8 +16,21 @@ services:
     image: module_marketplace/backend:latest
     ports:
       - "5000:5000"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/MM_Data
+    depends_on:
+      - mongodb
     volumes:
       - ./backend:/app
+
+  
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db  # Korrigiert auf /data/db, nicht /src/data/
+
 
   electron:
     build: 
@@ -31,3 +44,7 @@ services:
       - DISPLAY=${DISPLAY}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+
+
+volumes:
+  mongodb_data:  # Diese Zeile definiert das Volumen

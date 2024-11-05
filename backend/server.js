@@ -1,22 +1,52 @@
 const express = require('express');
+const router = express.Router();
 const fs = require('fs');
 const path = require('path');
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDoc = require('./src/middleware/swagger');
+//Routes
+const userRoutes = require('./src/routes/userRoutes.js')
+const moduleConfigRoutes = require('./src/routes/moduleConfigRoutes.js')
+const marketplaceRoutes = require('./src/routes/marketplaceRoutes.js')
+
+
+const { connectDB, disconnectDB } = require('./src/config/database');
+
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Welcome to the API',
-        endpoints: [
-            { method: 'GET', path: '/api', description: 'Returns the API status' },
-            { method: 'GET', path: '/debug', description: 'Returns available endpoints' }
-        ]
-    });
-});
+app.use(express.json());
+
+app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/moduleConfig',moduleConfigRoutes) //TODO
+app.use('/api/v1/marketplace/modules',marketplaceRoutes)
+
+
+
+
+
+
+
+
+
+
 
 
 // Einfacher Api-Endpoint
+
+/**
+ * @swagger
+ * /api:
+ * get:
+ *  summary: Retrieve connection details
+ *      responses:
+ *          200:
+ *              description: a status message
+ * 
+ */
 app.get('/api', (req, res) => {
     res.json({ message: 'Backend ist live!' });
 });
@@ -65,16 +95,14 @@ app.get('/api/json-files', (req, res) => {
     });
 });
 
-// Function to start the server
-const startServer = () => {
-    return app.listen(port, () => {
-        console.log(`Server läuft auf Port ${port}`);
+(async () => {
+    await connectDB();
+    app.listen(port, () => {
+        console.log(`Server is running on http://localhost:${port}`);
     });
-};
+})();
 
-module.exports = { app, startServer };
-
-// Optionally, add this if you want to allow running directly
-if (require.main === module) {
-    startServer();
-}
+process.on('SIGINT', async () => {
+    await disconnectDB();
+    process.exit(0);
+});
