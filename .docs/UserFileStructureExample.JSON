@@ -1,0 +1,24 @@
+{
+  "user": {
+    "username": "john_doe",
+    "email": "john@example.com",
+    "configuration": [
+      {
+        "module_id": "abc123",
+	  "module_name: "xyz",
+	  "Module_version,
+        "settings: [
+		"build": [
+          		{ "parameter1": "value", "quantity": 2 },
+          		{ "parameter2": "prod2", "quantity": 1 }
+		],
+		"run": [
+          		{ "parameter": "value", "quantity": 2 },
+          		{ "parameter2": "prod2", "quantity": 1 }
+		]
+        ],
+        "total_price": 59.99
+      }
+    ]
+  }
+}
