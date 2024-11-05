@@ -1,54 +1,64 @@
 {
-  "user": {
-    "username": "john_doe",
-    "email": "john@example.com",
-    "passwordHash": "1345",
-    "roles":["user","admin","whatever"],
-    "Unit":{
-	"placeholder_for_later":"none",
-    }
-    "configuration": [
-      {
-        "module_id": "abc123",
-	"module_name": "xyz",
-	"Module_version":"2.2.2",
-        "settings": [
-	  "build":{
-	    "build_script_name": "ExampleProject_Build",
-	    "description": "Build script for the Example Project.",
-	    "environment": {
-	      "PROJECT_ROOT": "C:\\Projects\\ExampleProject",
-	      "JAVA_HOME": "C:\\Program Files\\Java\\jdk-11.0.10",
-	      "MAVEN_HOME": "C:\\Program Files\\Maven\\apache-maven-3.8.1",
-	      "PATH_TO_FX": "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2"
-	     },
-	     "dependencies": [
-	       "C:\\Projects\\ExampleProject\\lib\\external\\log4j-api-2.14.1.jar",
-	       "C:\\Projects\\ExampleProject\\lib\\external\\log4j-core-2.14.1.jar",
-	       "C:\\Projects\\ExampleProject\\lib\\external\\jackson-core-2.12.3.jar",
-	       "C:\\Projects\\ExampleProject\\lib\\external\\jackson-databind-2.12.3.jar",
-	       "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2\\lib\\javafx-base-11.0.2.jar",
-	       "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2\\lib\\javafx-controls-11.0.2.jar",
-	       "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2\\lib\\javafx-graphics-11.0.2.jar"
-	     ],
-	     "java_options": {
-	       "library_path": "C:\\Projects\\ExampleProject\\lib\\native-libs",
-	       "exports": [
-	         "javafx.graphics/com.sun.javafx.scene.traversal=example_project",
-	         "javafx.controls/com.sun.javafx.scene.control.behavior=example_project",
-	         "javafx.base/com.sun.javafx.runtime=example_project"
-		],
-		"modules": "ALL-MODULE-PATH",
-		"main_class": "com.example.MainApp"
-	      },
-	      "build_command": "start \"ExampleProject Build\" C:\\Program Files\\Java\\jdk-11.0.10\\bin\\java -Djava.library.path=%PROJECT_ROOT%\\lib\\native-libs --add-exports=javafx.graphics/com.sun.javafx.scene.traversal=example_project --add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=example_project --add-exports=javafx.base/com.sun.javafx.runtime=example_project --add-modules=ALL-MODULE-PATH -m com.example/com.example.MainApp"
-	    },
-            "run": [
-	      { "parameter": "value", "quantity": 2 },
-	      { "parameter2": "prod2", "quantity": 1 }
-            ]
+    "user": {
+        "username": "john_doe",
+        "email": "john@example.com",
+        "passwordHash": "1345",
+        "roles": [
+            "user",
+            "admin",
+            "whatever"
+        ],
+        "Unit": {
+            "placeholder_for_later": "none"
+        },
+        "configuration": [
+            {
+                "module_id": "abc123",
+                "module_name": "xyz",
+                "Module_version": "2.2.2",
+                "settings": {
+                    "build": {
+                        "build_script_name": "ExampleProject_Build",
+                        "description": "Build script for the Example Project.",
+                        "environment": {
+                            "PROJECT_ROOT": "C:\\Projects\\ExampleProject",
+                            "JAVA_HOME": "C:\\Program Files\\Java\\jdk-11.0.10",
+                            "MAVEN_HOME": "C:\\Program Files\\Maven\\apache-maven-3.8.1",
+                            "PATH_TO_FX": "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2"
+                        },
+                        "dependencies": [
+                            "C:\\Projects\\ExampleProject\\lib\\external\\log4j-api-2.14.1.jar",
+                            "C:\\Projects\\ExampleProject\\lib\\external\\log4j-core-2.14.1.jar",
+                            "C:\\Projects\\ExampleProject\\lib\\external\\jackson-core-2.12.3.jar",
+                            "C:\\Projects\\ExampleProject\\lib\\external\\jackson-databind-2.12.3.jar",
+                            "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2\\lib\\javafx-base-11.0.2.jar",
+                            "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2\\lib\\javafx-controls-11.0.2.jar",
+                            "C:\\Projects\\ExampleProject\\lib\\javafx-sdk-11.0.2\\lib\\javafx-graphics-11.0.2.jar"
+                        ],
+                        "java_options": {
+                            "library_path": "C:\\Projects\\ExampleProject\\lib\\native-libs",
+                            "exports": [
+                                "javafx.graphics/com.sun.javafx.scene.traversal=example_project",
+                                "javafx.controls/com.sun.javafx.scene.control.behavior=example_project",
+                                "javafx.base/com.sun.javafx.runtime=example_project"
+                            ],
+                            "modules": "ALL-MODULE-PATH",
+                            "main_class": "com.example.MainApp"
+                        },
+                        "build_command": "start \"ExampleProject Build\" C:\\Program Files\\Java\\jdk-11.0.10\\bin\\java -Djava.library.path=%PROJECT_ROOT%\\lib\\native-libs --add-exports=javafx.graphics/com.sun.javafx.scene.traversal=example_project --add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=example_project --add-exports=javafx.base/com.sun.javafx.runtime=example_project --add-modules=ALL-MODULE-PATH -m com.example/com.example.MainApp"
+                    },
+                    "run": [
+                        {
+                            "parameter": "value",
+                            "quantity": 2
+                        },
+                        {
+                            "parameter2": "prod2",
+                            "quantity": 1
+                        }
+                    ]
+                }
+            }
         ]
-      }
-    ]
-  }
+    }
 }
