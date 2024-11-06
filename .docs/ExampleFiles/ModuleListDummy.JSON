@@ -1,0 +1,222 @@
+[
+  {
+    "module_id": "10001",
+    "module_name": "Asterix",
+    "module_version": "1.0.0",
+    "module_Type": "Konnektor",
+    "module_description": "Verbindet das System mit externen Datenquellen und ermöglicht die Datenübertragung.",
+    "connectors": {
+      "input": ["API1", "Datenquelle1"],
+      "output": ["Zielsystem1"]
+    }
+  },
+  {
+    "module_id": "10002",
+    "module_name": "Asterix",
+    "module_version": "1.0.1",
+    "module_Type": "Konnektor",
+    "module_description": "Erweiterte Version des Asterix Konnektors mit verbessertem Fehlerhandling.",
+    "connectors": {
+      "input": ["API1", "Datenquelle2"],
+      "output": ["Zielsystem2"]
+    }
+  },
+  {
+    "module_id": "10003",
+    "module_name": "Asterix",
+    "module_version": "1.0.2",
+    "module_Type": "Konnektor",
+    "module_description": "Optimierter Konnektor mit zusätzlicher Protokollunterstützung.",
+    "connectors": {
+      "input": ["API1", "Datenquelle3"],
+      "output": ["Zielsystem3"]
+    }
+  },
+  {
+    "module_id": "10004",
+    "module_name": "Obelix",
+    "module_version": "1.1.0",
+    "module_Type": "Fragment",
+    "module_description": "Modul zur Verwaltung von Fragmenten in der Datenbank, zur effizienteren Datenspeicherung.",
+    "connectors": {
+      "input": ["Datenbank1"],
+      "output": ["FragmentDaten"]
+    }
+  },
+  {
+    "module_id": "10005",
+    "module_name": "Obelix",
+    "module_version": "1.1.1",
+    "module_Type": "Fragment",
+    "module_description": "Verbesserte Fragmentierungstechnik zur Optimierung der Speicherperformance.",
+    "connectors": {
+      "input": ["Datenbank2"],
+      "output": ["OptimierteFragmente"]
+    }
+  },
+  {
+    "module_id": "10006",
+    "module_name": "Obelix",
+    "module_version": "1.1.2",
+    "module_Type": "Fragment",
+    "module_description": "Bietet zusätzliche Funktionen zur Fragmentanalyse und -wiederherstellung.",
+    "connectors": {
+      "input": ["Datenbank3"],
+      "output": ["AnalysierteFragmente"]
+    }
+  },
+  {
+    "module_id": "10007",
+    "module_name": "Idefix",
+    "module_version": "1.2.0",
+    "module_Type": "Services",
+    "module_description": "Service-Modul zur Verarbeitung von Echtzeit-Datenströmen und deren Weiterleitung.",
+    "connectors": {
+      "input": ["EchtzeitDaten1"],
+      "output": ["VerarbeiteteDaten1"]
+    }
+  },
+  {
+    "module_id": "10008",
+    "module_name": "Idefix",
+    "module_version": "1.2.1",
+    "module_Type": "Services",
+    "module_description": "Erweiterte Version mit zusätzlicher API-Unterstützung für die Kommunikation mit externen Diensten.",
+    "connectors": {
+      "input": ["EchtzeitDaten2"],
+      "output": ["VerarbeiteteDaten2"]
+    }
+  },
+  {
+    "module_id": "10009",
+    "module_name": "Idefix",
+    "module_version": "1.2.2",
+    "module_Type": "Services",
+    "module_description": "Bietet verbesserte Fehlerbehandlung und Performanceoptimierungen bei der Datenverarbeitung.",
+    "connectors": {
+      "input": ["EchtzeitDaten3"],
+      "output": ["VerarbeiteteDaten3"]
+    }
+  },
+  {
+    "module_id": "10010",
+    "module_name": "Assurancetourix",
+    "module_version": "1.3.0",
+    "module_Type": "HMI",
+    "module_description": "Benutzeroberfläche für die Verwaltung von Systemkonfigurationen und -parametern.",
+    "connectors": {
+      "input": ["SystemKonfigurationen"],
+      "output": ["KonfigurationsDaten"]
+    }
+  },
+  {
+    "module_id": "10011",
+    "module_name": "Assurancetourix",
+    "module_version": "1.3.1",
+    "module_Type": "HMI",
+    "module_description": "Optimierte Benutzeroberfläche mit zusätzlichen Funktionen zur Visualisierung von Daten.",
+    "connectors": {
+      "input": ["SystemDaten"],
+      "output": ["VisuelleDaten"]
+    }
+  },
+  {
+    "module_id": "10012",
+    "module_name": "Assurancetourix",
+    "module_version": "1.3.2",
+    "module_Type": "HMI",
+    "module_description": "Erweiterte HMI für eine benutzerfreundlichere Navigation und bessere Systemübersicht.",
+    "connectors": {
+      "input": ["BenutzerInteraktionen"],
+      "output": ["Benutzeroberfläche"]
+    }
+  },
+  {
+    "module_id": "10013",
+    "module_name": "Panoramix",
+    "module_version": "1.4.0",
+    "module_Type": "Services",
+    "module_description": "Backend-Service für komplexe Datenanalysen und das Bereitstellen von Ergebnissen an Frontend-Systeme.",
+    "connectors": {
+      "input": ["DatenanalyseDaten"],
+      "output": ["ErgebnisseFrontend"]
+    }
+  },
+  {
+    "module_id": "10014",
+    "module_name": "Panoramix",
+    "module_version": "1.4.1",
+    "module_Type": "Services",
+    "module_description": "Leistungsstärkere Version mit Unterstützung für parallele Berechnungen und größere Datenmengen.",
+    "connectors": {
+      "input": ["GroßeDatenmengen1"],
+      "output": ["BerechneteDaten1"]
+    }
+  },
+  {
+    "module_id": "10015",
+    "module_name": "Panoramix",
+    "module_version": "1.4.2",
+    "module_Type": "Services",
+    "module_description": "Bietet zusätzliche Integrationen mit externen Systemen für erweiterte Datenverarbeitung.",
+    "connectors": {
+      "input": ["ExterneDaten1"],
+      "output": ["VerarbeiteteErgebnisse1"]
+    }
+  },
+  {
+    "module_id": "10016",
+    "module_name": "Cacofonix",
+    "module_version": "1.5.0",
+    "module_Type": "Fragment",
+    "module_description": "Modul zur Analyse und Optimierung von Fragmentierungsprozessen in großen Datenbeständen.",
+    "connectors": {
+      "input": ["Datenbestände1"],
+      "output": ["OptimierteDaten"]
+    }
+  },
+  {
+    "module_id": "10017",
+    "module_name": "Cacofonix",
+    "module_version": "1.5.1",
+    "module_Type": "Fragment",
+    "module_description": "Erweiterte Funktionen zur Fragmentwiederherstellung und Reduzierung der Fragmentierungsrate.",
+    "connectors": {
+      "input": ["Datenbestände2"],
+      "output": ["WiederhergestellteDaten"]
+    }
+  },
+  {
+    "module_id": "10018",
+    "module_name": "Cacofonix",
+    "module_version": "1.5.2",
+    "module_Type": "Fragment",
+    "module_description": "Modul zur automatisierten Analyse und Defragmentierung von Datenbanken.",
+    "connectors": {
+      "input": ["Datenbank1"],
+      "output": ["DefragmentierteDaten"]
+    }
+  },
+  {
+    "module_id": "10019",
+    "module_name": "Bardix",
+    "module_version": "1.6.0",
+    "module_Type": "HMI",
+    "module_description": "Visuelle Benutzeroberfläche zur Erstellung und Verwaltung von Berichten und Dashboards.",
+    "connectors": {
+      "input": ["BerichtDaten"],
+      "output": ["Dashboard"]
+    }
+  },
+  {
+    "module_id": "10020",
+    "module_name": "Bardix",
+    "module_version": "1.6.1",
+    "module_Type": "HMI",
+    "module_description": "Erweiterte Dashboard-Funktionalitäten mit benutzerdefinierten Filtern und Diagrammanpassungen.",
+    "connectors": {
+      "input": ["DashboardKonfiguration"],
+      "output": ["InteraktiveDashboards"]
+    }
+  }
+]
