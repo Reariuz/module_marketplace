@@ -48,7 +48,7 @@ body {
   display: flex;
   flex: 1;
 }
-/*
+
 .sidebar {
   width: 220px;
   background-color: #2a2a2a;
@@ -75,7 +75,7 @@ body {
 .sidebar ul li:hover {
   color: #ffffff;
 }
-*/
+
 .main-content {
   flex: 1;
   padding: 20px;
